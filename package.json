@@ -5,5 +5,9 @@
     "test": "ant test"
   },
   "author": "James Gibson",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "grunt": "^1.0.1"
+  }
 }
