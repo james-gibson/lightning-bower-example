@@ -11,9 +11,8 @@ do
         cd $path
         zip -r ../../$TARGET/$dirname .
         cd ../../
-    else
-        filename="${path##*/}"
-        cp resource-bundles/$filename $TARGET
     fi
 done
 
+cd $TARGET
+rename -v 's/\.zip$/\.resource/' *.zip
