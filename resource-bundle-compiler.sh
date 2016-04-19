@@ -9,7 +9,7 @@ do
     then #Zip folders into .resource files
         dirname="$(basename "${path}")"
         cd $path
-        zip -r --exclude=*.scss ../../$TARGET/$dirname .
+        zip -r ../../$TARGET/$dirname .
         cd ../../
     else
         filename="${path##*/}"
@@ -17,8 +17,3 @@ do
     fi
 done
 
-cd $TARGET
-rename -v 's/\.css$/\.resource/' *.css
-rename -v 's/\.js$/\.resource/' *.js
-rename -v 's/\.jpg$/\.resource/' *.jpg
-rename -v 's/\.csv$/\.resource/' *.csv
