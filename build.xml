@@ -1,0 +1,40 @@
+<project basedir="." 
+         xmlns:sf="antlib:com.salesforce"
+         default="deploy"
+         >
+
+    <taskdef resource="com/salesforce/antlib.xml"
+             classPath="lib/ant-salesforce.jar"
+             uri="antlib:com.salesforce"/>
+
+    <property environment="env"/>
+    <target name="preBuild">
+        <exec executable="npm">
+            <arg value="install"/>
+        </exec>
+        <exec executable="grunt"/>
+        <exec executable="/bin/bash">
+             <arg value="resource-bundle-compiler.sh"/>
+        </exec>
+    </target>
+
+    <target name="test" description="Tests code against the development org">
+        <antcall target="preBuild"></antcall>
+        <sf:deploy username="${env.DEVELOPMENT_ORG_USERNAME}"
+                   password="${env.DEVELOPMENT_ORG_PASSWORD}"
+                   serverurl="${env.SALESFORCE_URL}"
+                   deployRoot="src"
+                   runAllTests="true"
+                   />
+    </target>
+
+    <target name="deploy" description="Deploys the code to the development org">
+        <antcall target="preBuild"></antcall>
+        <echo message="Deploying to Salesforce..."/>
+        <sf:deploy username="${env.DEVELOPMENT_ORG_USERNAME}"
+                   password="${env.DEVELOPMENT_ORG_PASSWORD}"
+                   serverurl="${env.SALESFORCE_URL}"
+                   deployRoot="src" 
+                   runAllTests="false"/>
+    </target>
+</project>
