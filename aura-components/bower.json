@@ -1,0 +1,21 @@
+{
+  "name": "lightning-bower-example.aura-components",
+  "authors": [
+    "James Gibson <james@apto.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lightning-leaflet": "https://github.com/james-gibson/lightning-leaflet.git"
+  }
+}
