@@ -1,5 +1,5 @@
 {
-  "name": "lightning-bower-example.resource-bundles,
+  "name": "lightning-bower-example.resource-bundles",
   "authors": [
     "James Gibson <james@apto.com>"
   ],
@@ -11,5 +11,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "leaflet": "leaflet-dist#^0.7.2"
+  }
 }
