@@ -1,0 +1,9 @@
+{
+  "name": "lightning-bower-example",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "ant test"
+  },
+  "author": "James Gibson",
+  "license": "MIT"
+}
