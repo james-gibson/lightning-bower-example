@@ -1,0 +1,15 @@
+{
+  "name": "lightning-bower-example.resource-bundles,
+  "authors": [
+    "James Gibson <james@apto.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
